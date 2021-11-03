@@ -1,0 +1,33 @@
+table, th, td {
+  border: 3px solid white;
+  border-collapse: collapse;
+}
+th{
+  background-color: #96D4D4;
+}
+td {
+  background-color: #96D4D4;
+}
+table{
+	float: left;
+	width: 70%;
+	margin: 20px;
+}
+.container{
+	margin-top:100px;
+}
+input{
+	
+}
+.button {
+	float: right;
+  margin: 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
