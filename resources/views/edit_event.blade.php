@@ -36,9 +36,10 @@
 		         <div class="row">
 		            <div class='col-md-6'>
 		               <div class="form-group">
-		                  <label class="control-label">Start Date and Time</label>
+		                  <label class="control-label">Start Date and Time</label><br>
+		                  <label class="control-label">Actual Start date and time: {{$startDateTime}}</label>
 		                  <div class='input-group date' id='datetimepicker1'>
-		                     <input type='text' class="form-control" name="start_datetime" value="{{$startDateTime}}" />
+		                     <input type='text' class="form-control" name="start_datetime"/>
 		                     <span class="input-group-addon">
 		                     <span class="glyphicon glyphicon-calendar"></span>
 		                     </span>
@@ -49,9 +50,10 @@
 		         <div class="row">
 		            <div class='col-md-6'>
 		               <div class="form-group">
-		                  <label class="control-label">End Date and Time</label>
+		                  <label class="control-label">End Date and Time</label><br>
+		                  <label class="control-label">Actual End date and time: {{$endDateTime}}</label>
 		                  <div class='input-group date' id='datetimepicker2'>
-		                     <input type='text' class="form-control" name="end_datetime" value="{{$endDateTime}}"/>
+		                     <input type='text' class="form-control" name="end_datetime"/>
 		                     <span class="input-group-addon">
 		                     <span class="glyphicon glyphicon-calendar"></span>
 		                     </span>

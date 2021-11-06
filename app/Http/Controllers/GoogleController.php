@@ -64,28 +64,27 @@ class GoogleController extends Controller
         $event = new Event;
         $event->name = $request->name;
         $event->description = $request->description;
-        $event->startDateTime = Carbon::parse($request->start_datetime);
-        $event->endDateTime =  Carbon::parse($request->end_datetime);
+        $event->startDateTime = Carbon::parse($request->start_datetime)->subHours(5)->subMinutes(30);
+        $event->endDateTime =  Carbon::parse($request->end_datetime)->subHours(5)->subMinutes(30);
         $event->save();
         return redirect(route('dashboard'));
     }
     public function edit_event(Request $request, $id) {
             $id = $request->id;
             $event = Event::find($id);
-            $startDateTime = Carbon::parse($event->start->dateTime)->format('m/d/y h:i:A');
-            $endDateTime = Carbon::parse($event->end->dateTime)->format('m/d/y h:i:A');
+            $startDateTime = Carbon::parse($event->start->dateTime)->format('m/d/Y h:i A');
+            $endDateTime = Carbon::parse($event->end->dateTime)->format('m/d/Y h:i A');
         return view('edit_event')
             ->with('event_data', $event)->with('startDateTime', $startDateTime)->with('endDateTime', $endDateTime);
     }
     public function edit_event_details(Request $request)
     {
-        $start_time = Carbon::parse($request->start_datetime);
-        $end_time = Carbon::parse($request->end_datetime);
         $event = Event::find($request->id);
-        $event->update(['name' => $request->name]);
-        $event->update(['description' => $request->description]);
-        $event->update(['startDateTime' => $start_time ]);
-        $event->update(['endDateTime' => $end_time]);
+        $event->name = $request->name;
+        $event->description = $request->description;
+        $event->startDateTime = Carbon::parse($request->start_datetime)->subHours(5)->subMinutes(30);
+        $event->endDateTime =  Carbon::parse($request->end_datetime)->subHours(5)->subMinutes(30);
+        $event->save();
         return redirect(route('dashboard'));
     }
 }
