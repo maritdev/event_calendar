@@ -72,7 +72,7 @@ class GoogleController extends Controller
     public function edit_event(Request $request, $id) {
             $id = $request->id;
             $event = Event::find($id);
-            $startDateTime = Carbon::parse($event->start->dateTime)->format('m/d/Y h:i A');
+            $startDateTime = Carbon::parse($event->start->dateTime)->format('m/d/Y h:i A'); 
             $endDateTime = Carbon::parse($event->end->dateTime)->format('m/d/Y h:i A');
         return view('edit_event')
             ->with('event_data', $event)->with('startDateTime', $startDateTime)->with('endDateTime', $endDateTime);
