@@ -60,7 +60,7 @@ class GoogleController extends Controller
     }
 
     public function add_event_details(Request $request)
-    {dd(Carbon::parse($request->start_datetime));
+    {
         $event = new Event;
         $event->name = $request->name;
         $event->description = $request->description;
