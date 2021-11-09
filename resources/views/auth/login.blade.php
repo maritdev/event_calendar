@@ -1,8 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
+        <!--<x-slot name="logo">
             <x-jet-authentication-card-logo />
-        </x-slot>
+        </x-slot>-->
  
         <x-jet-validation-errors class="mb-4" />
   
@@ -15,7 +15,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
  
-            <div>
+           <!-- <div>
                 <x-jet-label value="Email" />
                 <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
@@ -42,10 +42,10 @@
                 <x-jet-button class="ml-4">
                     {{ __('Login') }}
                 </x-jet-button>
-            </div>
-            <div class="flex items-center justify-end mt-4">
+            </div>-->
+            <div class="flex items-center">
                 <a href="{{ url('auth/google') }}">
-                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 6em;">
                 </a>
             </div>
         </form>
